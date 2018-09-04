@@ -13,6 +13,10 @@ $("#stand").click(function() {
     console.log("I'll Stand")
 })
 
+$("#redeal").click(function() {
+    console.log("Let's go again")
+})
+
 
 
 

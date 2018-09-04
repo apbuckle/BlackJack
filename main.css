@@ -1,23 +1,45 @@
-h1 {
-    color: blue;
-    text-align: center;
+body {
+    background-color:rgba(44, 42, 42, 0.959)
 }
+
+h1 {
+    color:black;
+    text-align: center;
+
+}
+
+h3 {
+    color: rgb(0, 170,156);
+    text-align: center;
+
+}
+
 
 .flex-container {
     display: flex;
     flex-direction: column; 
-    background-color: red;
+    background-color: rgba(32, 31, 31, 0.959);
     justify-content: center;
-    margin: 10px;
+    margin: 20px;
     padding: 20px;
-    width: 30%;
+    border: 2px solid;
+    border-color: white;
+    width: 25%;
    
 }
 
 .flex-container > div {
-    margin: 5px;
+    margin: 7px;
     padding: 10px;
+    border: 2px solid white;
     width: 90%;
     text-align: center;
-    
+    line-height: 2.5em;
+    color: black;
+       
+}
+
+.cardback {
+    max-height: 150px;
+    float: right;
 }
