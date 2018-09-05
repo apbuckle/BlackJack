@@ -8,24 +8,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
     <title>BlackJack</title>
 </head>
-
 <header>
     <h1>BlackJack</h1>
 </header>
 <body>
-    <h3>Dealer</h3>
-    
-        <div class="flex-container">
-            <div id="deal" class="waves-effect waves-light btn-large">Deal Cards</div>
+    <div id="container">
+        <div class="playingboard">
+            <div id="dealercards"></div>
+            <div id="playercards"></div>
+        </div>
+    <div class="buttons">
+            <div id="deal" class="waves-effect waves-light btn-small">Deal Cards</div>
             <div id="hit" class="waves-effect waves-light btn-large">Hit</div>
             <div id="stand" class="waves-effect waves-light btn-large">Stand</div>
-            <div id="redeal" class="waves-effect waves-light btn-large">New Deal</div>
-        </div>
-
-            <img class="cardback" src="http://pngimage.net/wp-content/uploads/2018/06/playing-card-back-png.png">
-        
-    <h3>Player</h3>
-
+            <div id="newgame" class="waves-effect waves-light btn-small">New Game</div>
+    </div>
+    <div class="score">
+        <input type="text" id="playercardsscore"value>Player's Score
+        <input type="text" id="dealercardsscore"value>Dealer's Score
+        <input type="text" id="alert">
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script src="script.js"></script>

@@ -1,3 +1,8 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color:rgba(44, 42, 42, 0.959)
 }
@@ -8,38 +13,73 @@ h1 {
 
 }
 
-h3 {
-    color: rgb(0, 170,156);
-    text-align: center;
 
-}
-
-
-.flex-container {
-    display: flex;
-    flex-direction: column; 
+#container {
+    /* display: flex; */
+    /* flex-direction: column;  */
     background-color: rgba(32, 31, 31, 0.959);
-    justify-content: center;
-    margin: 20px;
-    padding: 20px;
-    border: 2px solid;
-    border-color: white;
-    width: 25%;
+    /* justify-content: center; */
+    margin: 1em;
+    padding: 1%;
+    border: 2px solid white;
+    width: 50%;
+    margin-left: 25%;
    
 }
 
-.flex-container > div {
-    margin: 7px;
+.playingboard {
+    background-color: purple;
+    padding: 1%;
+}
+
+#dealercards {
+    margin: auto;
+    padding: 0.5%;
+    background-color: lightcyan;
+    height: 150px;
+}
+
+#playercards {
+    margin: auto;
+    padding: 0.5%;
+    background-color: lightseagreen;
+    height: 150px;
+}
+.buttons {
+    margin: 10px;
     padding: 10px;
+    height: 225px;
     border: 2px solid white;
     width: 90%;
     text-align: center;
     line-height: 2.5em;
     color: black;
-       
+
 }
 
-.cardback {
-    max-height: 150px;
-    float: right;
+#deal, #hit, #stand, #newgame {
+    margin: 20px;
+    display: block;
+    width: 90%;
 }
+
+#hit, #stand {
+    display: inline;
+
+}
+
+.score {
+    display: block;
+    text-align: center;
+}
+
+#playercardsscore, #dealercardsscore #alert{
+    display: block;
+    margin: 1% auto;
+    text-align: center;
+    font-size: 14px;
+    padding: 2px;
+    max-width: 100%
+}
+
+
