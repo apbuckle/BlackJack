@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background-color:rgba(44, 42, 42, 0.959)
+    background-color:rgba(44, 42, 42, 0.904)
 }
 
 h1 {
@@ -19,37 +19,38 @@ h1 {
     /* flex-direction: column;  */
     background-color: rgba(32, 31, 31, 0.959);
     /* justify-content: center; */
-    margin: 1em;
+    margin: auto;
     padding: 1%;
     border: 2px solid white;
-    width: 50%;
-    margin-left: 25%;
+    width: 60%;
+    /* margin-left: 25%; */
    
 }
 
 .playingboard {
-    background-color: purple;
+    background-color: rgba(211, 30, 30, 0.616);
     padding: 1%;
 }
 
 #dealercards {
     margin: auto;
     padding: 0.5%;
-    background-color: lightcyan;
+    background-color: rgba(106, 153, 207, 0.836);
     height: 150px;
 }
 
 #playercards {
     margin: auto;
     padding: 0.5%;
-    background-color: lightseagreen;
+    background-color:rgb(30, 128, 123);
     height: 150px;
 }
+
 .buttons {
-    margin: 10px;
+    margin: auto;
     padding: 10px;
     height: 225px;
-    border: 2px solid white;
+    border: 1px solid white;
     width: 90%;
     text-align: center;
     line-height: 2.5em;
@@ -57,14 +58,16 @@ h1 {
 
 }
 
-#deal, #hit, #stand, #newgame {
-    margin: 20px;
+#deal, #newgame {
+    margin: 20px auto;
     display: block;
-    width: 90%;
+    width: 80%;
 }
 
 #hit, #stand {
     display: inline;
+    margin: 0 30px;
+
 
 }
 
@@ -73,13 +76,17 @@ h1 {
     text-align: center;
 }
 
-#playercardsscore, #dealercardsscore #alert{
+#playercardsscore, #dealercardsscore, #alert{
     display: block;
-    margin: 1% auto;
+    margin: 5px auto;
     text-align: center;
-    font-size: 14px;
+    font-size: 25px;
     padding: 2px;
-    max-width: 100%
+    max-width: 90%;
+    color: black;
+    background-color: rgb(21, 223, 213);
+
+    
 }
 
 
