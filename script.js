@@ -1,8 +1,17 @@
 $(() => {
+    makeDeck();
+    cardValue();
+    buildPlayers();
+    // faceCard();
     console.log("ReadyPlayerOne")
+})
 
 $("#deal").click(function() {
-    
+    makeDeck();
+    cardValue();
+    // faceCard();
+    shuffle();
+//deal cards    
     console.log("Deal Me In")
 })
 
@@ -24,9 +33,40 @@ $("#newgame").click(function() {
 var suits = ["Diamonds", "Hearts", "Spades", "Clubs"];
 var numbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 var deck = new Array();
+var players = new Array();
+
+//Creating the deck and adding values for face cards and Ace.
+//Adding the shuffle function to randomize deck
+
+function makeDeck() {
+    deck = new Array();
+    for (var s = 0; s < suits.length; s++) {
+        for (var n = 0; n < numbers.length; n++) {
+        var card = {Number: numbers[n], Suit: suits[s]};
+        deck.push(card);
+        }
+    }
+}
+
+//Value for face cards and Ace
+function cardValue() {
+    if (numbers === "J" || numbers === "Q" || numbers === "K") {
+        return 10
+    }
+    else if (numbers === "A") {
+        return 11 
+    }
+    else {
+        return numbers
+        }        
+    }
+    
+    // var numbers = ("5");
+    // numbers = cardValue();
+    // console.log(cardValue());
+    //Found a cool way to display the cards using value and suit symbols
 
 
-//Found a cool way to display the cards using value and suit symbols
 function faceCard(card) {
     var el = document.createElement('div');
     var symbol = " ";
@@ -45,68 +85,42 @@ function faceCard(card) {
     
 }
 
-//Creating the deck and adding values for face cards and Ace.
-//Adding the shuffle function to randomize deck
-
-function makeDeck() {
-    deck = new Array();
-    for (var s = 0; s < suits.length; s++) {
-        for (var n = 0; n < numbers.length; n++) {
-        var card = {Number: numbers[n], Suit: suits[s]};
-        deck.push(card);
-        }
-    }
-}
-makeDeck();
-
-//Value for face cards and Ace
-function cardValue() {
-if (numbers === "J" || numbers === "Q" || numbers === "K") {
-    return 10
-}
-else if (numbers === "A") {
-    return 11 
-}
-else {
-    return numbers
-    }        
-}
-
-var numbers = ("A");
-numbers = cardValue();
-console.log(cardValue());
-
-
 
 //Durstenfeld shuffle used to randomize the deck
-function shuffle(arr) {
+function shuffle() {
     
-    for (var i = arr.length - 1; i > 0; i--) {
+    for (var i = deck.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
-        var temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        var temp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = temp;
 
     }
-    return arr;
+    // return arr;
 }
-var arr = [26, 5, 007, 34, 8, 590, 67, "H", "WE", "ZZ"];
-arr = shuffle(arr);
-console.log(arr);
+// var arr = [26, 5, 007, 34, 8, 590, 67, "H", "WE", "ZZ"];
+// arr = shuffle(arr);
+// console.log(arr);
 
 
 
+//Need to create player and dealer or two players
+//Players will possess a hand
 
-//Card images and adding image to game board
-//Add two images to player and then two to dealer
+function buildPlayers() {
+    players = new Array();
+    for (var i = 0; i <= 2; i++) {
+        var player = ("Player" + i)
+        players.push(player);
+console.log("They are alive")
+        }
 
-// function displayImg(card) {
-//     for (var i = 0; i < deck.length; i++) {
-//         var imgElement = document.createElement('img')
-//         imgElement.src =  "images/" + card[i].numbers + " of " + card[i].suits
-            
-//             if ()
-//     }
+    }
+
+
+    
+    
+
 
 
 
@@ -167,5 +181,5 @@ Alert();
 
 
 
-});
+// });
 
