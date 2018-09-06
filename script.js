@@ -6,7 +6,7 @@ $(() => {
 
 $("#deal").click(function () {
     dealCards();
-    console.log("Deal Me In")
+    score();
 })
 
 function dealCards() {
@@ -19,7 +19,7 @@ function dealCards() {
 
 $("#hit").click(function () {
     hit();
-    console.log("Hit Me")
+    score();
 })
 
 function hit() {
@@ -29,36 +29,29 @@ function hit() {
 }
 
 $("#stand").click(function () {
-    // stand();
-    // console.log("I'll Stand")
-// })
+    score();
+})
 
-// function stand() {
+function score() {
     let sum = 0
     for (var i = 0; i < playerHand.length; i++) {
         sum += playerHand[i].Numbers
-    
-        // if (players[i].score > 17 && players[i].score < 22)
-        //     alert("Winner")
+        if (sum === 21) {
+            alert("BLACKJACK")
+        }
+        else if (sum >= 22) {
+            alert('Bust')
+        }
     }
 
     console.log('Final hand value: ', sum)
-    
-})
 
-
-
-
-
-
-
-
-
-
+}
 
 
 $("#newgame").click(function () {
-    console.log("Let's go again")
+    location.reload();
+
 })
 
 //Work functions in order of logic. Start with cards, then deck and finally hand.  Hand will deal with scores and alerts.
