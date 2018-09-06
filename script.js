@@ -1,5 +1,6 @@
 $(() => {
-    makeDeck()
+    makeDeck();
+    shuffle();
     console.log("ReadyPlayerOne")
 })
 
@@ -28,21 +29,22 @@ function hit() {
 }
 
 $("#stand").click(function () {
-    stand();
-    console.log("I'll Stand")
-})
+    // stand();
+    // console.log("I'll Stand")
+// })
 
-function stand() {
+// function stand() {
     let sum = 0
     for (var i = 0; i < playerHand.length; i++) {
-        console.log('cards in hand: ', playerHand[i])
+        sum += playerHand[i].Numbers
+    
         // if (players[i].score > 17 && players[i].score < 22)
         //     alert("Winner")
     }
 
     console.log('Final hand value: ', sum)
-}
-
+    
+})
 
 
 
@@ -63,7 +65,7 @@ $("#newgame").click(function () {
 
 //First wanted to create the cards that will be played
 var suits = ["Diamonds", "Hearts", "Spades", "Clubs"];
-var numbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10"];
+var numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10];
 var deck = new Array();
 // var players = ['Player0', 'Player1'];
 let playerHand = []
@@ -101,22 +103,22 @@ function makeDeck() {
 //Found a cool way to display the cards using value and suit symbols
 
 
-function faceCard(card) {
-    var el = document.createElement('div');
-    var symbol = " ";
-    if (card.Suit == "Hearts")
-        symbol = "&hearts;";
-    else if (card.Suit == "Diamonds")
-        symbol = "&diams;";
-    else if (card.Suit == "Spades")
-        symbol = "&spades;";
-    else (card.Suit == "Clubs")
-    symbol = "&clubs;";
+// function faceCard(card) {
+//     var el = document.createElement('div');
+//     var symbol = " ";
+//     if (card.Suit == "Hearts")
+//         symbol = "&hearts;";
+//     else if (card.Suit == "Diamonds")
+//         symbol = "&diams;";
+//     else if (card.Suit == "Spades")
+//         symbol = "&spades;";
+//     else (card.Suit == "Clubs")
+//     symbol = "&clubs;";
 
-    el.className = "card";
-    el.innerHTML = card.Value + "<br/>" + symbol;
-    return el;
-}
+//     el.className = "card";
+//     el.innerHTML = card.Value + "<br/>" + symbol;
+//     return el;
+// }
 
 
 //Durstenfeld shuffle used to randomize the deck
@@ -132,25 +134,25 @@ function shuffle() {
 
 
 
-function score() {
-    var points = 0;
-    for (var i = 0; i < player.hand.length; i++) {
-        points += player.hand;
-    }
-    players[i].points = score;
-    return score;
-}
+// function score() {
+//     var points = 0;
+//     for (var i = 0; i < player.hand.length; i++) {
+//         points += player.hand;
+//     }
+//     players[i].points = score;
+//     return score;
+// }
 
 //Change the alert function to a means to check if player busted over 21  
-function checkForBust() {
-    var sum = 22;
-    if (sum > 21) {
-        console.log("BUSTED")
-    }
-    if (sum === 21) {
-        console.log("BLACKJACK You Win")
-    }
-}
+// function checkForBust() {
+//     var sum = 22;
+//     if (sum > 21) {
+//         console.log("BUSTED")
+//     }
+//     if (sum === 21) {
+//         console.log("BLACKJACK You Win")
+//     }
+// }
 
 
 
@@ -170,20 +172,6 @@ function checkForBust() {
 
 
 
-//Function that alerts player if they can hit, busted or hit Blackjack
-
-
-// function Alert() {
-//     var handSum = 21;
-// if (handSum > 21) {
-//     console.log("BUSTED")
-// }
-// if (handSum === 21) {
-//     console.log("BLACKJACK You Win")
-// }
-// else console.log("You may hit")
-//  }
-// Alert();
 
 
 
@@ -191,7 +179,8 @@ function checkForBust() {
 
 
 
-//Function for stand button
+
+
 
 
 
