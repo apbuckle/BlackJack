@@ -11,11 +11,14 @@ $("#deal").click(function() {
     cardValue();
     // faceCard();
     shuffle();
+    dealCards();
 //deal cards    
     console.log("Deal Me In")
 })
 
 $("#hit").click(function() {
+    hit();
+    checkForBust();
     console.log("Hit Me")
 })
 
@@ -109,7 +112,7 @@ function shuffle() {
 
 function buildPlayers() {
     players = new Array();
-    for (var i = 0; i <= 2; i++) {
+    for (var i = 0; i <= 1; i++) {
         var player = ("Player" + i)
         players.push(player);
 console.log("They are alive")
@@ -117,6 +120,54 @@ console.log("They are alive")
 
     }
 
+//Each player will have a hand with 2 cards to start off with.
+//Need to make a funtion let will allow card to pop() from deck and push() card to hand and show its images
+
+function dealCards() {
+    hand = new Array();
+    var card = deck.pop();
+    hand.push(card);
+    console.log("Deal")
+
+//Function to sum value of hand
+
+function sumOfHand() {
+    var total = 0;
+    for (var i = 0; i < player.hand.length; i++) {
+        total += player.hand;
+    }
+    return total;
+}
+console.log("I can count")
+}
+
+//Function for hit button
+//only adds 1 card to hand from deck. pop() then 1 push() to hand
+//update sum
+//check if over 21
+
+function hit(){
+    var card = deck.pop();
+    hand.push(card);
+    sumOfHand();
+    
+
+}
+//Change the alert function to a means to check if player busted over 21  
+function checkForBust() {
+    var sum = 21;
+if (sum > 21) {
+    console.log("BUSTED")
+}
+if (sum === 21) {
+    console.log("BLACKJACK You Win")
+}
+}
+checkForBust();
+
+
+
+
 
     
     
@@ -128,9 +179,8 @@ console.log("They are alive")
 
 
 
-// }
 
-//Need to make a funtion for a card that will pop() from deck and push() card to hand and show its images
+
 
 
 //Need to create a function that will deal the hand from the deck
@@ -148,25 +198,23 @@ console.log("They are alive")
 
 
 //Function that alerts player if they can hit, busted or hit Blackjack
-function Alert() {
-    var cardSum = 21;
-if (cardSum > 21) {
-    console.log("BUSTED")
-}
-if (cardSum === 21) {
-    console.log("BLACKJACK You Win")
-}
-else console.log("You may hit")
- }
-Alert();
-
-//Function for deal button
-//Will add two cards to player and two cards to dealer
 
 
+// function Alert() {
+//     var handSum = 21;
+// if (handSum > 21) {
+//     console.log("BUSTED")
+// }
+// if (handSum === 21) {
+//     console.log("BLACKJACK You Win")
+// }
+// else console.log("You may hit")
+//  }
+// Alert();
 
-//Function for hit button
-//only adds 1 card to player deck and checks to see if its a bust
+
+
+
 
 
 
