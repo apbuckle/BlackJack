@@ -1,32 +1,61 @@
 $(() => {
-    makeDeck();
-    cardValue();
-    buildPlayers();
-    // faceCard();
+    makeDeck()
     console.log("ReadyPlayerOne")
 })
 
-$("#deal").click(function() {
-    makeDeck();
-    cardValue();
-    // faceCard();
-    shuffle();
+$("#deal").click(function () {
     dealCards();
-//deal cards    
     console.log("Deal Me In")
 })
 
-$("#hit").click(function() {
+function dealCards() {
+    var card = deck.pop();
+    playerHand.push(card);
+    var card = deck.pop();
+    playerHand.push(card);
+    console.log("Dealt", playerHand)
+}
+
+$("#hit").click(function () {
     hit();
-    checkForBust();
     console.log("Hit Me")
 })
 
-$("#stand").click(function() {
+function hit() {
+    var card = deck.pop();
+    playerHand.push(card);
+    console.log(playerHand)
+}
+
+$("#stand").click(function () {
+    stand();
     console.log("I'll Stand")
 })
 
-$("#newgame").click(function() {
+function stand() {
+    let sum = 0
+    for (var i = 0; i < playerHand.length; i++) {
+        console.log('cards in hand: ', playerHand[i])
+        // if (players[i].score > 17 && players[i].score < 22)
+        //     alert("Winner")
+    }
+
+    console.log('Final hand value: ', sum)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+$("#newgame").click(function () {
     console.log("Let's go again")
 })
 
@@ -34,150 +63,94 @@ $("#newgame").click(function() {
 
 //First wanted to create the cards that will be played
 var suits = ["Diamonds", "Hearts", "Spades", "Clubs"];
-var numbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+var numbers = ["2", "3", "4", "5", "6", "7", "8", "9", "10"];
 var deck = new Array();
-var players = new Array();
+// var players = ['Player0', 'Player1'];
+let playerHand = []
 
 //Creating the deck and adding values for face cards and Ace.
 //Adding the shuffle function to randomize deck
 
 function makeDeck() {
-    deck = new Array();
+    // deck = new Array();
     for (var s = 0; s < suits.length; s++) {
         for (var n = 0; n < numbers.length; n++) {
-        var card = {Number: numbers[n], Suit: suits[s]};
-        deck.push(card);
+            var card = { Numbers: numbers[n], Suits: suits[s] };
+            deck.push(card);
         }
     }
+    console.log(deck);
 }
 
 //Value for face cards and Ace
-function cardValue() {
-    if (numbers === "J" || numbers === "Q" || numbers === "K") {
-        return 10
-    }
-    else if (numbers === "A") {
-        return 11 
-    }
-    else {
-        return numbers
-        }        
-    }
-    
-    // var numbers = ("5");
-    // numbers = cardValue();
-    // console.log(cardValue());
-    //Found a cool way to display the cards using value and suit symbols
+// function cardValue() {
+//     if (numbers === "J" || numbers === "Q" || numbers === "K") {
+//         return 10
+//     }
+//     else if (numbers === "A") {
+//         return 11
+//     }
+//     else {
+//         return numbers
+//     }
+// }
+
+// var numbers = ("5");
+// numbers = cardValue();
+// console.log(cardValue());
+//Found a cool way to display the cards using value and suit symbols
 
 
 function faceCard(card) {
     var el = document.createElement('div');
     var symbol = " ";
     if (card.Suit == "Hearts")
-    symbol = "&hearts;";
+        symbol = "&hearts;";
     else if (card.Suit == "Diamonds")
-    symbol = "&diams;";
+        symbol = "&diams;";
     else if (card.Suit == "Spades")
-    symbol = "&spades;";
+        symbol = "&spades;";
     else (card.Suit == "Clubs")
     symbol = "&clubs;";
 
     el.className = "card";
     el.innerHTML = card.Value + "<br/>" + symbol;
     return el;
-    
 }
 
 
 //Durstenfeld shuffle used to randomize the deck
 function shuffle() {
-    
     for (var i = deck.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = deck[i];
         deck[i] = deck[j];
         deck[j] = temp;
-
     }
-    // return arr;
 }
-// var arr = [26, 5, 007, 34, 8, 590, 67, "H", "WE", "ZZ"];
-// arr = shuffle(arr);
-// console.log(arr);
 
 
 
-//Need to create player and dealer or two players
-//Players will possess a hand
 
-function buildPlayers() {
-    players = new Array();
-    for (var i = 0; i <= 1; i++) {
-        var player = ("Player" + i)
-        players.push(player);
-console.log("They are alive")
-        }
-
-    }
-
-//Each player will have a hand with 2 cards to start off with.
-//Need to make a funtion let will allow card to pop() from deck and push() card to hand and show its images
-
-function dealCards() {
-    hand = new Array();
-    var card = deck.pop();
-    hand.push(card);
-    console.log("Deal")
-
-//Function to sum value of hand
-
-function sumOfHand() {
-    var total = 0;
+function score() {
+    var points = 0;
     for (var i = 0; i < player.hand.length; i++) {
-        total += player.hand;
+        points += player.hand;
     }
-    return total;
-}
-console.log("I can count")
+    players[i].points = score;
+    return score;
 }
 
-//Function for hit button
-//only adds 1 card to hand from deck. pop() then 1 push() to hand
-//update sum
-//check if over 21
-
-function hit(){
-    var card = deck.pop();
-    hand.push(card);
-    sumOfHand();
-    
-
-}
 //Change the alert function to a means to check if player busted over 21  
 function checkForBust() {
-    var sum = 21;
-if (sum > 21) {
-    console.log("BUSTED")
+    var sum = 22;
+    if (sum > 21) {
+        console.log("BUSTED")
+    }
+    if (sum === 21) {
+        console.log("BLACKJACK You Win")
+    }
 }
-if (sum === 21) {
-    console.log("BLACKJACK You Win")
-}
-}
-checkForBust();
-
-
-
-
-
-    
-    
-
-
-
-
-
-
-
 
 
 
