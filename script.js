@@ -1,4 +1,4 @@
-var suits = ["Diamonds", "Hearts", "Spades", "Clubs"];
+var suits = ["&diams;", "&hearts;", "&spades;", "&clubs;"];
 var numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10];
 var deck = new Array();
 var players = ['Player0', 'Player1'];
@@ -43,10 +43,11 @@ function dealCards() {
         <div class='dealt'>
             ${playerHand[1].Numbers}
             ${playerHand[1].Suits}
+            
         </div>
 
         </div>
-    `)       
+    `)
 }
 
 function hit() {
@@ -131,20 +132,3 @@ $("#newgame").click(function () {
 // var numbers = ("5");
 // numbers = cardValue();
 // console.log(cardValue());
-
-
-function faceCard(card) {
-    var suits = symbol;
-    if (card.suit == "Hearts")
-        symbol = "&hearts;";
-    else if (card.suit == "Diamonds")
-        symbol = "&diams;";
-    else if (card.suit == "Spades")
-        symbol = "&spades;";
-    else (card.suit == "Clubs")
-    symbol = "&clubs;";
-
-    // el.className = "card";
-    // el.innerHTML = card.Value + "<br/>" + symbol;
-    return suits;
-}

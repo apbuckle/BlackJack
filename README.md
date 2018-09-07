@@ -1,9 +1,38 @@
 # BlackJack
 
 
-For the first project, wanted to create a BlackJack game.  Will follow same rules of Amerian style BlackJack.  When player enters game they will play against the house/dealer.  Objective is to score high card total without going over 21 than the dealer's hand. You will have the option to hit (asking for an additional card) or stand (keeping your cards and not taking any more cards).  Player wins if the house bust(goes over 21) or have a higher total than house wihtout busting.  Dealer must hit on a total of  16 or less and will stand on 17.  BlackJack is when you receive 21 on the deal out.
+For the first project, wanted to create a BlackJack game.  Ideally will follow same rules of traditional blackjack with player trying to get 21 or closest to, without going over. 
 
-Future features
 
+Accomplished:
+
+Built a game that went from working on through just the console to showing up in the browser.  A simle one player game with functioning buttons, display, score keeping and alerts for Blackjack or Bust, as well as a new game button that starts the game over. 
+
+
+Struggles:
+
+Slow start figuring out the logic and sequence of game play.  Starting with images of cards and hand rather than thinking about the order of objects and events that will take place.  Went back and focused on creating the deck we would start off with, then moved to dealing those cards, finally the actually hand where we then see the image and can tally scores and alerts.
+
+Struggled with staying focused on one aspect/function before moving on.  Planning the game from the User's perspective and keeping it simple to start.  I wanted it to be bigger and more complex before taking the first steps of making one person able to recieve cards and get a score.**
+
+I would write comments throughout the code for myself to follow or attempt to place code in order.  But this created confusion and messy code/writing mixed together.  Did not utilize Trello well enough to stay in topic, let alone using the functions on Trello correctly.  Will definitely take more time in using Trello to stay focused on individual tasks and goals.
+
+Still struggled with JavaScript and jQuery for the DOM.  Feel like having to work through this project helped with the concepts better but still need more practice particularly with manipulating the DOM via jQuery.
+
+
+
+Sources:
+
+Materilize for button style
+
+Durstenfeld shuffle
+
+
+
+
+Future features:
+- Improve game play with more than one player and a dealer. A better UI.
+- A.I. compotent with a dealer that will automoatically accpet cards and your hand will play against.
+- Incorporate the face card and Ace values into game play. Including macking Ace either 11 or 1.
 - Betting system with chip amounts and winnings 
 - Additional playing options with spliting cards, douubling bets and insurance if dealer starts with an Ace.
