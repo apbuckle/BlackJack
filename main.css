@@ -4,12 +4,13 @@ html {
 }
 
 body {
-    background-color:rgba(44, 42, 42, 0.904)
+    background-color:rgba(161, 12, 12, 0.87)
 }
 
 h1 {
     color:black;
     text-align: center;
+
 
 }
 
@@ -17,40 +18,47 @@ h1 {
 #container {
     /* display: flex; */
     /* flex-direction: column;  */
-    background-color: rgba(32, 31, 31, 0.959);
+    background-color: rgba(5, 5, 5, 0.959);
     /* justify-content: center; */
     margin: auto;
     padding: 1%;
     border: 2px solid white;
-    width: 60%;
+    max-width: 60%;
     /* margin-left: 25%; */
    
 }
 
 .playingboard {
-    background-color: rgba(211, 30, 30, 0.616);
     padding: 1%;
+    
 }
 
-#dealercards {
+#dealtcards {
     margin: auto;
     padding: 0.5%;
-    background-color: rgba(106, 153, 207, 0.836);
+    background-color: rgba(106, 153, 207, 0.945);
     height: 150px;
 }
 
-#playercards {
+#hitcards {
     margin: auto;
     padding: 0.5%;
-    background-color:rgb(30, 128, 123);
+    background-color:rgba(53, 76, 128, 0.993);
     height: 150px;
+}
+
+.dealt, .hit {
+    margin: auto;
+    padding: 10px;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold
 }
 
 .buttons {
     margin: auto;
     padding: 10px;
     height: 225px;
-    border: 1px solid white;
     width: 90%;
     text-align: center;
     line-height: 2.5em;
@@ -76,15 +84,17 @@ h1 {
     text-align: center;
 }
 
-#playercardsscore, #dealercardsscore, #alert{
+#alert {
     display: block;
+    height: 50px;
     margin: 5px auto;
     text-align: center;
-    font-size: 25px;
+    font-size: 30px;
+    font-weight: bold;
     padding: 2px;
-    max-width: 90%;
+    max-width: 70%;
     color: black;
-    background-color: rgb(21, 223, 213);
+    background-color: rgb(155, 213, 221);
 
     
 }

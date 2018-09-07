@@ -6,7 +6,6 @@ let playerHand = []
 
 
 function makeDeck() {
-    // deck = new Array();
     for (var s = 0; s < suits.length; s++) {
         for (var n = 0; n < numbers.length; n++) {
             var card = { Numbers: numbers[n], Suits: suits[s] };
@@ -35,12 +34,33 @@ function dealCards() {
     var card = deck.pop();
     playerHand.push(card);
     console.log("Dealt", playerHand)
+
+    $('#dealtcards').html(`
+        <div class='dealt'>
+            ${playerHand[0].Numbers}
+            ${playerHand[0].Suits}
+        </div>
+        <div class='dealt'>
+            ${playerHand[1].Numbers}
+            ${playerHand[1].Suits}
+        </div>
+
+        </div>
+    `)       
 }
 
 function hit() {
     var card = deck.pop();
     playerHand.push(card);
     console.log(playerHand)
+
+    $('#hitcards').html(`
+        <div div class='hit'>
+            ${playerHand[2].Numbers}
+            ${playerHand[2].Suits}
+
+        </div>
+    `)
 }
 
 function score() {
@@ -56,9 +76,13 @@ function score() {
     }
 
     console.log('Final hand value: ', sum)
+
+    $('#alert').html(`
+        <div class='score'>
+            ${sum}
+            
+    `)
 }
-
-
 
 
 $(() => {
@@ -109,19 +133,18 @@ $("#newgame").click(function () {
 // console.log(cardValue());
 
 
-// function faceCard(card) {
-//     var el = document.createElement('div');
-//     var symbol = " ";
-//     if (card.Suit == "Hearts")
-//         symbol = "&hearts;";
-//     else if (card.Suit == "Diamonds")
-//         symbol = "&diams;";
-//     else if (card.Suit == "Spades")
-//         symbol = "&spades;";
-//     else (card.Suit == "Clubs")
-//     symbol = "&clubs;";
+function faceCard(card) {
+    var suits = symbol;
+    if (card.suit == "Hearts")
+        symbol = "&hearts;";
+    else if (card.suit == "Diamonds")
+        symbol = "&diams;";
+    else if (card.suit == "Spades")
+        symbol = "&spades;";
+    else (card.suit == "Clubs")
+    symbol = "&clubs;";
 
-//     el.className = "card";
-//     el.innerHTML = card.Value + "<br/>" + symbol;
-//     return el;
-// }
+    // el.className = "card";
+    // el.innerHTML = card.Value + "<br/>" + symbol;
+    return suits;
+}
