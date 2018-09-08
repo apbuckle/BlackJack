@@ -6,6 +6,12 @@ For the first project, wanted to create a BlackJack game.  Ideally will follow s
 
 Link to game: http://eloquent-murdock-1a3b76.netlify.com/
 
+link to Trello:
+https://trello.com/b/KS2qmIWp/black-jack-game
+
+
+
+
 
 Technologies Used:
 
