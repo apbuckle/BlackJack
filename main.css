@@ -34,11 +34,12 @@ h1 {
 }
 
 #dealtcards {
-    margin: auto;
+    margin: auto;    
     padding: 0.5%;
-    background-color: rgba(106, 153, 207, 0.945);
+    background-color: rgba(106, 146, 207, 0.945);
     height: 150px;
 }
+
 
 #hitcards {
     margin: auto;
@@ -52,7 +53,7 @@ h1 {
     padding: 10px;
     font-size: 40px;
     text-align: center;
-    font-weight: bold
+    font-weight: bold;
 }
 
 .buttons {

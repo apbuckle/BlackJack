@@ -9,8 +9,8 @@ Link to game: http://eloquent-murdock-1a3b76.netlify.com/
 link to Trello:
 https://trello.com/b/KS2qmIWp/black-jack-game
 
-
-
+link to wireframe pic:
+https://imgur.com/a/N6u5gzY
 
 
 Technologies Used:

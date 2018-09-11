@@ -45,8 +45,7 @@ function dealCards() {
             ${playerHand[1].Suits}
             
         </div>
-
-        </div>
+    
     `)
 }
 
